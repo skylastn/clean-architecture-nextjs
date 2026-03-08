@@ -2,7 +2,7 @@ import { createContext, useState, useContext } from "react";
 
 const LoadingContext = createContext({
   loading: false,
-  setLoading: (v: boolean) => {},
+  setLoading: (_v: boolean) => {},
 });
 
 export const LoadingProvider = ({

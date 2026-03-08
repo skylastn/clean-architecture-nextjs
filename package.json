@@ -1,28 +1,31 @@
 {
-  "name": "back_office",
+  "name": "web-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "antd": "^5.24.9",
-    "axios": "^1.9.0",
-    "next": "15.3.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.2"
+    "@tailwindcss/postcss": "^4.2.1",
+    "axios": "^1.13.6",
+    "next": "16.1.6",
+    "postcss": "^8.5.8",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-hot-toast": "^2.6.0",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.0",
-    "typescript": "^5"
+    "@eslint/eslintrc": "^3.3.4",
+    "@types/node": "^25.3.5",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.3",
+    "eslint-config-next": "^16.1.6",
+    "typescript": "^5.9.3"
   }
 }

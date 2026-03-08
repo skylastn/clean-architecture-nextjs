@@ -1,4 +1,4 @@
-import RegisterUI from "@/presentation/auth/register/register_ui";
+import RegisterUI from "@/features/auth/presentation/register/register_ui";
 
 const RegisterPage = () => {
   return (

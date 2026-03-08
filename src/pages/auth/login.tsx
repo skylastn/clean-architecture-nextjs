@@ -1,4 +1,5 @@
-import LoginUI from "@/presentation/auth/login/login_ui";
+import LoginUI from "@/features/auth/presentation/login/login_ui";
+
 const LoginPage = () => {
   return (
     <>
