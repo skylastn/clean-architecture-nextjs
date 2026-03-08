@@ -13,4 +13,12 @@ export class AuthLocalDataSource {
   get isLogin(): boolean {
     return !!this.localDb.token;
   }
+
+  saveIsDarkMode(value: boolean): void {
+    return this.localDb.saveIsDarkMode(value);
+  }
+
+  get isDarkMode(): boolean {
+    return this.localDb.isDarkMode;
+  }
 }

@@ -33,4 +33,12 @@ export class AuthService {
   async logout(): Promise<Either<string, boolean>> {
     return await this.repo.logout();
   }
+
+  saveIsDarkMode(value: boolean): void {
+    return this.repo.saveIsDarkMode(value);
+  }
+
+  get isDarkMode(): boolean {
+    return this.repo.isDarkMode;
+  }
 }

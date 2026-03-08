@@ -1,20 +1,40 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { useAuthService } from "../dependency_injection/global_container";
 
 interface GlobalContextProps {
-  initialized: boolean;
+  changeDarkMode: () => void;
+  isDarkMode: boolean;
+  fontColor: string;
+  bgColor: string;
 }
 
 const GlobalLogic = createContext<GlobalContextProps | undefined>(undefined);
-// const includeBanner = ["/"];
+
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
-  // const router = useRouter();
-  // useEffect(() => {
-  //   if (!router.isReady) return;
-  // }, [router.isReady]);
+  const service = useAuthService();
+  const [isDarkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const value = service.isDarkMode;
+    if (value == isDarkMode) return;
+    setDarkMode(value);
+  }, [service]);
+
+  const changeDarkMode = () => {
+    const value = !isDarkMode;
+    service.saveIsDarkMode(value);
+    setDarkMode(value);
+  };
+
+  const fontColor = isDarkMode ? "text-white" : "text-black";
+  const bgColor = isDarkMode ? "bg-[#171c28]" : "bg-gray-400";
+
   return (
-    <GlobalLogic.Provider value={{ initialized: true }}>
+    <GlobalLogic.Provider
+      value={{ changeDarkMode, isDarkMode, fontColor, bgColor }}
+    >
       {children}
     </GlobalLogic.Provider>
   );

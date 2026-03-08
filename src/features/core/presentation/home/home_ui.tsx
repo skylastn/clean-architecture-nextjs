@@ -37,12 +37,12 @@ export default function HomeUI() {
         <h3 className="text-lg font-bold text-white md:text-xl">
           Product Lainnya
         </h3>
-        <span className="text-xs text-white/50 md:text-sm">
+        <span className="text-xs  md:text-sm text-white">
           {(photoState.data ?? []).length} items
         </span>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {(photoState.data ?? []).map((item) => (
           <ContentComponent
             content={item}
@@ -92,9 +92,7 @@ export function ContentComponent({
           {content.author}
         </h3>
 
-        <p className="mt-1 text-sm text-white/70">
-          Explore this collection
-        </p>
+        <p className="mt-1 text-sm text-white/70">Explore this collection</p>
       </div>
     </a>
   );

@@ -26,4 +26,12 @@ export class AuthRepositoryImpl implements AuthRepository {
   async logout(): Promise<Either<string, boolean>> {
     return await this.remote.logout();
   }
+
+  saveIsDarkMode(value: boolean): void {
+    return this.local.saveIsDarkMode(value);
+  }
+
+  get isDarkMode(): boolean {
+    return this.local.isDarkMode;
+  }
 }
