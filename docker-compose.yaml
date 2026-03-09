@@ -1,0 +1,15 @@
+services:
+  web-sample:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_ENV: ${APP_ENV}
+        NEXT_PUBLIC_ENDPOINT_URL: ${NEXT_PUBLIC_ENDPOINT_URL}
+    container_name: fo-vg-${APP_ENV}
+    env_file:
+      - .env
+    ports:
+      - "${DOCKER_PORT}:3000"
+    restart: unless-stopped
+    network_mode: "host"
